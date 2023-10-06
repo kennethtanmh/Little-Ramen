@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review Page</title>
+    <title>About Page</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
           <li><a href="../../index.html">Home</a></li>
           <li><a href="../../pages/about/about.html">About</a></li>
           <li><a href="">Menu</a></li>
-          <li><a href="review.html" class="active">Review</a></li>
+          <li><a href="../../pages/review/review.html">Review</a></li>
           <li><a href="../../pages/signin/signin.html">Sign in</a></li>
           <li>
             <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
@@ -26,34 +26,14 @@
         </ul>
       </div>
     </nav>
-    <section id="reviewhero">
-        <h1>Reviews</h1>
-        <p>Ramen Love Stories: What Our Patrons Are Raving About!</p>
-    </section>
-    <section id="reviewcarousel">
-        <div class="reviewslider">
-            <img src="../../img/review5.png" alt="ramen">
-            <img src="../../img/review2.png" alt="ramen">
-            <img src="../../img/review3.png" alt="egg">
-            <img src="../../img/review4.png" alt="ramen">
-
-        </div>
-        <div class="reviewslider">
-            <img src="../../img/review5.png" alt="ramen">
-            <img src="../../img/review2.png" alt="ramen">
-            <img src="../../img/review3.png" alt="egg">
-            <img src="../../img/review4.png" alt="ramen">
-        </div>
-    </section>
-    <section id="reviewform">
-        <h1>Write A Review</h1>
+    <section id="signupform">
+        <h1>Sign Up</h1>
         <form action="">
-          <label for="name"> Name:</label>
+          <label for="name">Name:</label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="John Doe"
             required
           />
           <label for="email">E-mail:</label>
@@ -61,27 +41,33 @@
             type="email"
             id="email"
             name="email"
-            placeholder="John@littleramen.com"
             required
           />
-          <label for="phone">Phone Number:</label>
+          <label for="password">Password:</label>
+          <input
+            type="text"
+            id="password"
+            name="password"
+            required
+          />
+          <label for="confirmpassword">Confirm Password:</label>
+          <input
+            type="text"
+            id="confirmpassword"
+            name="confirmpassword"
+            required
+          />
+          <label for="conatctnum">Contact Number:</label>
           <input
             type="tel"
-            id="phone"
-            name="phone"
-            placeholder="91234567"
+            id="conatctnum"
+            name="conatctnum"
             required
           />
-          <label for="review">Review:</label>
-          <textarea
-            id="review"
-            name="review"
-            cols="50"
-            rows="20"
-            placeholder="..."
-            required
-          ></textarea>
-          <input type="submit" value="Submit" />
+          <a href="../../pages/signin/signin.html">Already have an account?</a>
+          <div id="centeraccbutton">
+            <input type="submit" value="Create Account" />
+          </div>
         </form>
     </section>
     <footer id="footer">
@@ -92,7 +78,7 @@
           <h4>Little Ramen</h4>
           <a href="../../pages/about/about.html">About</a>
           <a href="">Menu</a>
-          <a href="review.html">Review</a>
+          <a href="../../pages/review/review.html">Review</a>
           <a href="../../pages/signin/signin.html">Sign In</a>
         </div>
         <div class="footernav2">
@@ -113,5 +99,5 @@
           <img src="../../icon/tiktok.png" alt="tiktok logo">
         </div>
     </footer>
-    </body>
-  </html>
+ </body>
+</html>

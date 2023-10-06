@@ -72,93 +72,47 @@ body {
 }
 
 /**************************************************************************************************** */
-/* About Page Section */
+/* Signin Section */
 
-#reviewhero {
-  height: 30vh;
-  border-bottom: 1px solid #f9f9f9;
-}
-
-#reviewhero h1 {
-  color: #f9f9f9;
-  text-align: center;
-  position: absolute;
-  font-size: 3.5em;
-  margin: 0;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#reviewhero p {
-  color: #f9f9f9;
-  text-align: center;
-  position: absolute;
-  font-size: 1em;
-  margin: 0;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-#reviewcarousel {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 2.5% 5% 2.5% 5%;
-}
-
-#reviewcarousel:hover .reviewslider {
-  animation-play-state: paused;
-}
-
-.reviewslider {
-  display: inline-block;
-  animation: 30s slide infinite linear;
-}
-
-.reviewslider img {
-  height: 500px;
-}
-
-#reviewform {
-  border-top: 1px solid #f9f9f9;
-  padding: 2% 0;
+#signupform {
+  height: 65vh;
+  padding: 5% 0;
   text-align: center;
 }
 
-#reviewform h1 {
+#signupform h1 {
   color: #f9f9f9;
   font-size: 3em;
   margin-bottom: 20px;
 }
 
-#reviewform form {
+#signupform form {
   width: 80%;
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
 }
 
-#reviewform label {
+#signupform label {
   display: block;
   font-size: 1.2em;
   color: #f9f9f9;
   margin-bottom: 5px;
 }
 
-#reviewform input[type="text"],
-#reviewform input[type="email"],
-#reviewform input[type="tel"],
-#reviewform textarea {
+#signupform a {
+  color: #f9f9f9;
+  margin-bottom: 5px;
+}
+
+#signupform a:hover {
+  color: #b71c1c;
+  margin-bottom: 5px;
+}
+
+#signupform input[type="email"],
+#signupform input[type="text"],
+#signupform input[type="tel"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -167,22 +121,24 @@ body {
   font-size: 1em;
 }
 
-#reviewform textarea {
-  height: 200px;
+#centeraccbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
-#reviewform input[type="submit"] {
+#signupform input[type="submit"] {
   background-color: #b71c1c;
   color: #f9f9f9;
   border: none;
   padding: 10px 30px;
   font-size: 1.2em;
   cursor: pointer;
-  display: block;
-  margin: 0 auto;
   border-radius: 5px;
 }
 
-#reviewform input[type="submit"]:hover {
+#signupform input[type="submit"]:hover {
   background-color: #8b1616;
 }
