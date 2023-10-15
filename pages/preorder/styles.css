@@ -15,6 +15,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 #navbar {
@@ -69,116 +70,131 @@ body {
 #footer div.footernav1 a:hover {
   color: #b71c1c;
 }
+
 /**************************************************************************************************** */
-/* Home Page Section */
-#hero {
-  background-image: url("./img/heroimg.jpg");
-  height: 90vh;
-  width: 100%;
-  background-repeat: no-repeat;
-  position: relative;
+/* Menu2 Page Section */
+
+#preorderhero {
+  height: 30vh;
+  border-bottom: 1px solid #f9f9f9;
 }
 
-#hero h1 {
+#preorderhero h1 {
   color: #f9f9f9;
   text-align: center;
   position: absolute;
-  top: 50%;
+  font-size: 3.5em;
+  margin: 0;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5em;
-  margin: 0;
-  opacity: 0.85;
 }
 
-#story {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #f9f9f9;
-  padding-top: 20px;
-}
-
-#story div:first-child {
-  flex: 1;
-}
-
-#story div img {
-  max-width: 80%;
-  height: auto;
-  padding: 10% 0 0 30%;
-}
-
-#story div.storydescription {
+#preorderhero p {
   color: #f9f9f9;
   text-align: center;
-  padding: 5% 15% 0 10%;
-  flex: 1;
+  position: absolute;
+  font-size: 1em;
+  margin: 0;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#preordermenu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin: 2% 0;
+  color: #f9f9f9;
+}
+
+#preordermenu h1 {
+  margin-left: 30.5%;
+}
+
+.preorderramen,
+.preordersidedish,
+.preorderdrink {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px 30% 0 30%;
+}
+
+.card {
+  width: 300px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #202020;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.description p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.description p:last-of-type {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.add-to-cart-section {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  font-size: 1.5em;
+  margin-top: 10px;
 }
 
-#story div p {
-  margin-bottom: 10%;
-}
-
-#story div button {
+.add-to-cart-btn {
   background-color: #b71c1c;
   color: #f9f9f9;
-  padding: 12px 24px;
+  padding: 5px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
+  width: 80%;
+  flex-grow: 1;
 }
 
-#story div button:hover {
+.add-to-cart-btn:hover {
   background-color: #8b1616;
 }
-#homemenu {
-  margin-top: 5%;
-  border-top: 1px solid #f9f9f9;
-  padding-top: 20px;
-}
 
-#homemenu h1 {
-  color: #f9f9f9;
-  font-size: 3em;
-  text-align: center;
-}
-
-#homemenu p {
-  color: #f9f9f9;
-  font-size: 1em;
-  text-align: center;
-}
-
-#homemenu div.homemenuimg {
+.quantity {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 3% 15% 5% 15%;
+  margin-top: 10px;
+  padding-left: 5%;
 }
 
-#homemenu div.homemenuimg img {
-  max-width: 25%;
-  height: auto;
-}
-
-#homemenu button {
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 5%;
+.quantity-btn {
   background-color: #b71c1c;
   color: #f9f9f9;
-  padding: 12px 24px;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
   cursor: pointer;
 }
 
-#homemenu button:hover {
+.quantity-btn:hover {
   background-color: #8b1616;
+}
+
+.quantity-value {
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#preordermenu h5 {
+  margin-top: 5%;
+  margin-left: 1%;
 }

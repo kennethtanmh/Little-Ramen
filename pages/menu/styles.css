@@ -72,77 +72,70 @@ body {
 }
 
 /**************************************************************************************************** */
-/* Signin Section */
+/* Menu Page Section */
 
-#signupform {
-  height: 65vh;
-  padding: 5% 0;
+#menuhero {
+  height: 30vh;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+#menuhero h1 {
+  color: #f9f9f9;
+  text-align: center;
+  position: absolute;
+  font-size: 3.5em;
+  margin: 0;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#menuhero p {
+  color: #f9f9f9;
+  text-align: center;
+  position: absolute;
+  font-size: 1em;
+  margin: 0;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#menupage {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.menu-column {
   text-align: center;
 }
 
-#signupform h1 {
-  color: #f9f9f9;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-#signupform form {
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-#signupform label {
+.menu-image {
+  width: 300px;
+  height: 200px;
   display: block;
-  font-size: 1.2em;
-  color: #f9f9f9;
-  margin-bottom: 5px;
+  margin: 20px auto;
 }
 
-#signupform a {
-  color: #f9f9f9;
-  margin-bottom: 5px;
-}
-
-#signupform a:hover {
-  color: #b71c1c;
-  margin-bottom: 5px;
-}
-
-#signupform input[type="email"],
-#signupform input[type="text"],
-#signupform input[type="tel"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #f9f9f9;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-#centeraccbutton {
+#menubuttondiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  margin-top: 20px;
 }
 
-#signupform input[type="submit"] {
+.menubutton {
   background-color: #b71c1c;
   color: #f9f9f9;
+  padding: 12px 24px;
   border: none;
-  padding: 10px 30px;
-  font-size: 1.2em;
-  cursor: pointer;
   border-radius: 5px;
+  margin: 2%;
+  cursor: pointer;
 }
 
-#signupform input[type="submit"]:hover {
+.menubutton:hover {
   background-color: #8b1616;
-}
-
-#signupform {
-  margin: 0 0 3% 0;
 }
