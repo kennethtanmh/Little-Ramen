@@ -137,7 +137,7 @@ if (isset($_POST['email'], $_POST['password'])) {
                     required
                   />
                   <a href="../../pages/signup/signup.html">Sign Up </a>
-                  <p style="color:#b71c1c">*Incorrect Credentials</p>
+                  <p style="color:#b71c1c">Incorrect login credentials. Please try again!</p>
                   <input type="submit" value="Submit" />
                 </form>
             </section>
