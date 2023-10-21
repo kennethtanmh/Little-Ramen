@@ -47,7 +47,7 @@
     </section>
     <section id="reviewform">
         <h1>Write A Review</h1>
-        <form action="">
+        <form action="./review.php" method="post">
           <label for="name"> Name:</label>
           <input
             type="text"
@@ -78,7 +78,8 @@
             name="review"
             cols="50"
             rows="20"
-            placeholder="..."
+            placeholder="Maximum of 1000 characters"
+            maxlength="1000"
             required
           ></textarea>
           <input type="submit" value="Submit" />

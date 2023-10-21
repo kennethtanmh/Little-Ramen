@@ -7,3 +7,12 @@ CREATE TABLE IF NOT EXISTS users (
   password CHAR(60) NOT NULL,
   phone_number VARCHAR(20)
 );
+
+
+CREATE TABLE IF NOT EXISTS reviews (
+  review_id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(20),
+  review VARCHAR(1000) NOT NULL
+);
