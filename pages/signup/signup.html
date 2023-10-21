@@ -28,7 +28,7 @@
     </nav>
     <section id="signupform">
         <h1>Sign Up</h1>
-        <form action="">
+        <form action="./signup.php" method="post">
           <label for="name">Name:</label>
           <input
             type="text"
@@ -41,27 +41,29 @@
             type="email"
             id="email"
             name="email"
+            onchange="validateEmail()"
             required
           />
           <label for="password">Password:</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             required
           />
           <label for="confirmpassword">Confirm Password:</label>
           <input
-            type="text"
+            type="password"
             id="confirmpassword"
             name="confirmpassword"
             required
+            onchange="validatePassword()"
           />
-          <label for="conatctnum">Contact Number:</label>
+          <label for="contactnum">Contact Number:</label>
           <input
             type="tel"
-            id="conatctnum"
-            name="conatctnum"
+            id="contactnum"
+            name="contactnum"
             required
           />
           <a href="../../pages/signin/signin.html">Already have an account?</a>
@@ -100,4 +102,41 @@
         </div>
     </footer>
  </body>
+ <script>
+    function validateEmail() {
+    var email = document.getElementById("email").value;
+    email = email.trim();
+    if (email.length > 0) {
+      var regexp = /^[\w-\.]+@([\w]+\.)([\w]+\.)?([\w]+\.)?[\w]{2,3}$/;
+      if (regexp.test(email)) {
+        return true;
+      } else {
+        alert('Email entered "' + email + '" has incorrect format');
+      }
+    } else {
+      alert("Please fill in your email.");
+    }
+
+    // Clear the input field if wrong
+    document.getElementById("email").value = "";
+    return false;
+  }
+
+  function validatePassword() {
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmpassword").value;
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match!");
+
+    // Clear the input field if wrong
+    document.getElementById("confirmpassword").value = "";
+    return false; // Returning false prevents the form from being submitted
+  }
+
+  return true; // Returning true allows the form to be submitted
+}
+
+
+</script>
 </html>

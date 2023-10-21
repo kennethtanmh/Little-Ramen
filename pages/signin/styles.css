@@ -111,7 +111,8 @@ body {
 }
 
 #signinform input[type="email"],
-#signinform input[type="text"] {
+#signinform input[type="text"],
+#signinform input[type="password"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -134,4 +135,90 @@ body {
 
 #signinform input[type="submit"]:hover {
   background-color: #8b1616;
+}
+
+/**************************************************************************************************** */
+/* Account Section */
+
+#account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0 5% 0;
+}
+
+.card {
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 50%;
+  max-width: 800px; /* optional max width to prevent it from becoming too wide */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-icon {
+  border-radius: 50%;
+  width: 256px;
+  height: 256px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-info h2 {
+  color: #f9f9f9;
+  font-size: 2em;
+}
+
+.user-info p {
+  color: #f9f9f9;
+  font-size: 1em;
+}
+
+.user-info h3 {
+  color: #f9f9f9;
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+.promo-card {
+  display: flex;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-card h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.promo-card p {
+  font-size: 1.2em;
+  color: #b71c1c;
+}
+
+.promo-button {
+  padding: 10px 20px;
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.promo-button:hover {
+  background-color: #961919;
 }

@@ -26,26 +26,23 @@
         </ul>
       </div>
     </nav>
-    <section id="signinform">
-        <h1>Sign In</h1>
-        <form action="./signin.php" method="post">
-          <label for="email">E-mail:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
-          <a href="../../pages/signup/signup.html">Sign Up </a>
-          <input type="submit" value="Submit" />
-        </form>
+    <section id="account">
+        <!-- can remove card with white icon -->
+        <div class="card">
+            <div class="user-info">
+                <img src="../../img/user1.png" alt="User Icon" class="user-icon">
+                <h2>Welcome back, User!</h2>
+                <p>Email: example@example.com</p>
+                <p>Phone: 123-456-7890</p>
+                <h3>Promotion Codes</h3>
+            </div>
+            <div class="promo-section">
+                <div class="promo-card">
+                    <h3>Free Matcha: matcha23 </h3>
+                    <a href="../../pages/preorder/preorder.html"><button class="promo-button">Use</button></a>
+                </div>
+            </div>
+        </div>
     </section>
     <footer id="footer">
         <div class="footerimg">
