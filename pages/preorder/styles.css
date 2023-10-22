@@ -109,16 +109,17 @@ body {
 }
 
 #preordermenu h1 {
-  margin-left: 30.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .preorderramen,
 .preordersidedish,
 .preorderdrink {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 5px 30% 0 30%;
+  padding: 5px 0 0 14.1%;
 }
 
 .card {
@@ -127,6 +128,7 @@ body {
   margin: 10px;
   padding: 10px;
   background-color: #202020;
+  color: #f9f9f9;
 }
 
 .card img {
@@ -159,9 +161,8 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
   width: 80%;
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 .add-to-cart-btn:hover {
@@ -171,30 +172,35 @@ body {
 .quantity {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  padding-left: 5%;
+  justify-content: space-around;
+  flex-grow: 1;
 }
 
-.quantity-btn {
-  background-color: #b71c1c;
+.quantity-label {
+  font-size: 1em;
+  margin-left: 15px;
   color: #f9f9f9;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.quantity-btn:hover {
-  background-color: #8b1616;
-}
-
-.quantity-value {
+.quantity-value,
+.quantity input {
   margin: 0 10px;
   font-size: 1.2em;
   font-weight: bold;
+  border: none;
+  background-color: transparent;
+  color: #f9f9f9;
+  width: 40px;
+  text-align: center;
 }
 
-#preordermenu h5 {
+.quantity input:focus {
+  outline: none;
+  border-bottom: 2px solid #b71c1c;
+}
+
+h5 {
   margin-top: 5%;
-  margin-left: 1%;
+  display: flex;
+  justify-content: center;
 }
