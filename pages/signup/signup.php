@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul id="navbar">
               <li><a href="../../index.html">Home</a></li>
               <li><a href="../../pages/about/about.html">About</a></li>
-              <li><a href="../../pages/preorder/preorder.html">Menu</a></li>
+              <li><a href="../../php/menuredirect.php">Menu</a></li>
               <li><a href="../../pages/review/review.html">Review</a></li>
               <li><a href="../../pages/signin/signin.html">Sign in</a></li>
               <li>
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="footernav1">
               <h4>Little Ramen</h4>
               <a href="../../pages/about/about.html">About</a>
-              <a href="../../pages/preorder/preorder.html">Menu</a>
+              <a href="../../php/menuredirect.php">Menu</a>
               <a href="../../pages/review/review.html">Review</a>
               <a href="../../pages/signin/signin.html">Sign In</a>
             </div>

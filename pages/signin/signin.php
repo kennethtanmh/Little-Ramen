@@ -49,6 +49,9 @@ if (isset($_POST['email'], $_POST['password'])) {
                         <h2>Welcome back, '. $row['name'] .'!</h2>
                         <p>Email: ' . $row['email'] . '</p>
                         <p>Phone: ' . $row['phone_number'] . '</p>
+                        <form action="../../php/logout.php" method="post">
+                          <button type="submit" class="logout-button">Logout</button>
+                        </form>
                         <h3>Promotion Codes</h3>
                     </div>
                     <div class="promo-section">
@@ -110,7 +113,7 @@ if (isset($_POST['email'], $_POST['password'])) {
                 <ul id="navbar">
                   <li><a href="../../index.html">Home</a></li>
                   <li><a href="../../pages/about/about.html">About</a></li>
-                  <li><a href="../../pages/preorder/preorder.html">Menu</a></li>
+                  <li><a href="../../php/menuredirect.php">Menu</a></li>
                   <li><a href="../../pages/review/review.html">Review</a></li>
                   <li><a href="signin.html" class="active">Sign in</a></li>
                   <li>
@@ -148,7 +151,7 @@ if (isset($_POST['email'], $_POST['password'])) {
                 <div class="footernav1">
                   <h4>Little Ramen</h4>
                   <a href="../../pages/about/about.html">About</a>
-                  <a href="../../pages/preorder/preorder.html">Menu</a>
+                  <a href="../../php/menuredirect.php">Menu</a>
                   <a href="../../pages/review/review.html">Review</a>
                   <a href="signin.html">Sign In</a>
                 </div>

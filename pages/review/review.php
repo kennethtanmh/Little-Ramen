@@ -34,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul id="navbar">
               <li><a href="../../index.html">Home</a></li>
               <li><a href="../../pages/about/about.html">About</a></li>
-              <li><a href="../../pages/preorder/preorder.html">Menu</a></li>
+              <li><a href="../../php/menuredirect.php">Menu</a></li>
               <li><a href="review.html" class="active">Review</a></li>
-              <li><a href="../../pages/signin/signin.html">Sign in</a></li>
+              <li><a href="../../pages/preorder/preorder.html">Sign in</a></li>
               <li>
                 <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
               </li>
@@ -71,9 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="footernav1">
               <h4>Little Ramen</h4>
               <a href="../../pages/about/about.html">About</a>
-              <a href="../../pages/preorder/preorder.html">Menu</a>
+              <a href="../../php/menuredirect.php">Menu</a>
               <a href="review.html">Review</a>
-              <a href="../../pages/signin/signin.html">Sign In</a>
+              <a href="../../pages/preorder/preorder.html">Sign In</a>
             </div>
             <div class="footernav2">
               <h4>Contact Us:</h4>

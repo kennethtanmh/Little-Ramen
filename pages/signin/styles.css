@@ -222,3 +222,18 @@ body {
 .promo-button:hover {
   background-color: #961919;
 }
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.logout-button:hover {
+  background-color: #961919;
+}

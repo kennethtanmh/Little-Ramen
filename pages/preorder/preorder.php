@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['valid_user'])) {
     // Redirect the user to the sign-in page
     header("Location: ../../pages/signin/signin.html");
-    exit; // Ensure that no further code is executed
+    exit(); // Ensure that no further code is executed
 }
 
 // Check if the form has been submitted
