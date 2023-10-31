@@ -16,21 +16,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Get the item details from the submitted form
-    // add filetr_input func to sanitize the post request
+    // add filter_input func to sanitize the post request
     $itemName = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $itemPrice = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING);
     $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_STRING);
 
-    // Create an array to represent the item and add it to the cart
-    $cartItem = array(
+    $itemExists = false; // A flag to check if the item is already in the shopping cart
+
+    foreach ($_SESSION['cart'] as &$cartitem) {
+      if ($cartItem['name'] == $itemName) {
+
+        // if there has been the same item added before increase the quantity rather than as a new entry in the cart
+        $cartItem['quantity'] += $quantity
+
+        $itemExists = true
+        // once item found exit the loop
+        break
+      }
+    }
+
+    if (!$itemExists) {
+      // Create an array to represent the item and add it to the cart 
+      $cartItem = array(
         'name' => $itemName,
         'price' => $itemPrice,
         'quantity' => $quantity
-    );
-
-    // Add the item to the cart array
-    $_SESSION['cart'][] = $cartItem;
-
+      );
+      // Add the item to the cart array
+      $_SESSION['cart'][] = $cartItem;
+    }
+    
 }
 ?>
 
