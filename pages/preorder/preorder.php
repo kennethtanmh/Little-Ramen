@@ -22,16 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_STRING);
 
     $itemExists = false; // A flag to check if the item is already in the shopping cart
-
-    foreach ($_SESSION['cart'] as &$cartitem) {
+    
+    foreach ($_SESSION['cart'] as &$cartItem) {
       if ($cartItem['name'] == $itemName) {
 
         // if there has been the same item added before increase the quantity rather than as a new entry in the cart
-        $cartItem['quantity'] += $quantity
+        $cartItem['quantity'] += $quantity;
 
-        $itemExists = true
+        $itemExists = true;
         // once item found exit the loop
-        break
+        break;
       }
     }
 
