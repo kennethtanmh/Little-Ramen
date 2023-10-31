@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Get the item details from the submitted form
-    $itemName = $_POST['item_name'];
-    $itemPrice = $_POST['item_price'];
+    $itemName = $_POST['name'];
+    $itemPrice = $_POST['price'];
     $quantity = $_POST['quantity'];
 
     // Create an array to represent the item and add it to the cart
@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Add the item to the cart array
     $_SESSION['cart'][] = $cartItem;
+
 }
 ?>
 
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <script src="form-promise.js" defer></script>
   </head>
   <body>
     <nav id="header">
@@ -54,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <li><a href="../../pages/about/about.html">About</a></li>
           <li><a href="./preorder.html" class="active">Menu</a></li>
           <li><a href="../../pages/review/review.html">Review</a></li>
-          <li><a href="../../pages/signin/signin.html">Sign in</a></li>
+          <li><a href="../../php/redirect.php">Sign in</a></li>
           <li>
             <a href="./cart.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
           </li>
@@ -68,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section id="preordermenu">
       <h1>Ramen</h1>
       <div class="preorderramen">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen1.jpg" alt="Ramen Image 1" />
             <div class="description">
@@ -76,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Salty bliss in every spoonful</p>
               <p>$15.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="shio">
-                <input type="hidden" name="item_price" value="15.99">
+                <input type="hidden" name="name" value="shio">
+                <input type="hidden" name="price" value="15.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -87,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen2.jpg" alt="Ramen Image 2" />
             <div class="description">
@@ -95,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Soup-erbly satisfying umami explosion</p>
               <p>$14.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="miso">
-                <input type="hidden" name="item_price" value="14.99">
+                <input type="hidden" name="name" value="miso">
+                <input type="hidden" name="price" value="14.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -106,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen3.jpg" alt="Ramen Image 3"/>
             <div class="description">
@@ -114,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>A fiery eruption of flavors</p>
               <p>$15.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="volcano">
-                <input type="hidden" name="item_price" value="15.99">
+                <input type="hidden" name="name" value="volcano">
+                <input type="hidden" name="price" value="15.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -125,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen4.jpg" alt="Ramen Image 4"/>
             <div class="description">
@@ -133,8 +135,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Your favourite Singaporean fusion</p>
               <p>$9.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="kosong">
-                <input type="hidden" name="item_price" value="9.99">
+                <input type="hidden" name="name" value="kosong">
+                <input type="hidden" name="price" value="9.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -147,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
       <h1>Side Dishes</h1>
       <div class="preordersidedish">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside1.jpg" alt="Sides Image 1" />
             <div class="description">
@@ -155,8 +157,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p> A yolky surprise to every slurp</p>
               <p>$1.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="tamago">
-                <input type="hidden" name="item_price" value="1.99">
+                <input type="hidden" name="name" value="tamago">
+                <input type="hidden" name="price" value="1.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -166,7 +168,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside2.jpg" alt="Sides Image 2" />
             <div class="description">
@@ -174,8 +176,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Crispy-bottomed bundles of joy</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="gyoza">
-                <input type="hidden" name="item_price" value="4.99">
+                <input type="hidden" name="name" value="gyoza">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -185,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside3.jpg" alt="Sides Image 3"  />
             <div class="description">
@@ -193,8 +195,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Silky perfection in custard embrace</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="chawanmushi">
-                <input type="hidden" name="item_price" value="9.99">
+                <input type="hidden" name="name" value="chawanmushi">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -204,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside4.jpg" alt="Sides Image 4" />
             <div class="description">
@@ -212,8 +214,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Rolling up some tasty joy</p>
               <p>$5.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="temaki">
-                <input type="hidden" name="item_price" value="5.99">
+                <input type="hidden" name="name" value="temaki">
+                <input type="hidden" name="price" value="5.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -226,7 +228,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
       <h1>Drinks</h1>
       <div class="preorderdrink">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink1.jpg" alt="Drink Image 1" />
             <div class="description">
@@ -234,8 +236,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>A whisk of delight a sip of serenity</p>
               <p>$2.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="matcha">
-                <input type="hidden" name="item_price" value="2.99">
+                <input type="hidden" name="name" value="matcha">
+                <input type="hidden" name="price" value="2.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -245,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink2.jpg" alt="Drink Image 2" />
             <div class="description">
@@ -253,8 +255,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Really you need a description?</p>
               <p>$2.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="coke">
-                <input type="hidden" name="item_price" value="2.99">
+                <input type="hidden" name="name" value="coke">
+                <input type="hidden" name="price" value="2.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -264,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink3.jpg" alt="Drink Image 3" />
             <div class="description">
@@ -272,8 +274,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>A golden brew happiness in a glass</p>
               <p>$9.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="biru">
-                <input type="hidden" name="item_price" value="9.99">
+                <input type="hidden" name="name" value="biru">
+                <input type="hidden" name="price" value="9.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -283,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink4.jpg" alt="Drink Image 4" />
             <div class="description">
@@ -291,8 +293,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <p>Citrusy zest a burst of sunshine</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="item_name" value="yuzu">
-                <input type="hidden" name="item_price" value="4.99">
+                <input type="hidden" name="name" value="yuzu">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -314,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <a href="../../pages/about/about.html">About</a>
           <a href="./preorder.html">Menu</a>
           <a href="../../pages/review/review.html">Review</a>
-          <a href="../../pages/signin/signin.html">Sign In</a>
+          <a href="../../php/redirect.php">Sign In</a>
         </div>
         <div class="footernav2">
           <h4>Contact Us:</h4>
