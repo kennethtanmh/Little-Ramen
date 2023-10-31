@@ -16,9 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Get the item details from the submitted form
-    $itemName = $_POST['name'];
-    $itemPrice = $_POST['price'];
-    $quantity = $_POST['quantity'];
+    // add filetr_input func to sanitize the post request
+    $itemName = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $itemPrice = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING);
+    $quantity = filter_input(INPUT_POST, 'quantity', FILTER_SANITIZE_STRING);
 
     // Create an array to represent the item and add it to the cart
     $cartItem = array(
