@@ -8,11 +8,12 @@ const handleFormSubmit = (event) => {
   // Reference to the current item that is being submitted
   const form = event.currentTarget;
 
-  // sanity check to see if the right data is passed
   const formData = new FormData(form);
-  for (let [key, value] of formData.entries()) {
-    console.log(key, value);
-  }
+
+  // sanity check to see if the right data is passed
+  // for (let [key, value] of formData.entries()) {
+  //   console.log(key, value);
+  // }
 
   // send data to the server using the Fetch API
   sendDataToServer(formData)
