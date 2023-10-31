@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <script src="form-promise.js" defer></script>
   </head>
   <body>
     <nav id="header">
@@ -20,7 +21,7 @@
           <li><a href="../../pages/review/review.html">Review</a></li>
           <li><a href="../../php/redirect.php">Sign in</a></li>
           <li>
-            <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+            <a href="./cart.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
           </li>
         </ul>
       </div>
@@ -32,7 +33,7 @@
     <section id="preordermenu">
       <h1>Ramen</h1>
       <div class="preorderramen">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen1.jpg" alt="Ramen Image 1" />
             <div class="description">
@@ -40,8 +41,8 @@
               <p>Salty bliss in every spoonful</p>
               <p>$15.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="shio" value="shio">
-                <input type="hidden" name="shio-price" value="15.99">
+                <input type="hidden" name="name" value="shio">
+                <input type="hidden" name="price" value="15.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -51,7 +52,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen2.jpg" alt="Ramen Image 2" />
             <div class="description">
@@ -59,8 +60,8 @@
               <p>Soup-erbly satisfying umami explosion</p>
               <p>$14.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="miso" value="miso">
-                <input type="hidden" name="miso-price" value="14.99">
+                <input type="hidden" name="name" value="miso">
+                <input type="hidden" name="price" value="14.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -70,7 +71,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen3.jpg" alt="Ramen Image 3"/>
             <div class="description">
@@ -78,8 +79,8 @@
               <p>A fiery eruption of flavors</p>
               <p>$15.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="volcano" value="volcano">
-                <input type="hidden" name="volcano-price" value="15.99">
+                <input type="hidden" name="name" value="volcano">
+                <input type="hidden" name="price" value="15.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -89,7 +90,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuramen4.jpg" alt="Ramen Image 4"/>
             <div class="description">
@@ -97,8 +98,8 @@
               <p>Your favourite Singaporean fusion</p>
               <p>$9.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="kosong" value="kosong">
-                <input type="hidden" name="kosong-price" value="9.99">
+                <input type="hidden" name="name" value="kosong">
+                <input type="hidden" name="price" value="9.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -111,7 +112,7 @@
       </div>
       <h1>Side Dishes</h1>
       <div class="preordersidedish">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside1.jpg" alt="Sides Image 1" />
             <div class="description">
@@ -119,8 +120,8 @@
               <p> A yolky surprise to every slurp</p>
               <p>$1.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="tamago" value="tamago">
-                <input type="hidden" name="tamago-price" value="1.99">
+                <input type="hidden" name="name" value="tamago">
+                <input type="hidden" name="price" value="1.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -130,7 +131,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside2.jpg" alt="Sides Image 2" />
             <div class="description">
@@ -138,8 +139,8 @@
               <p>Crispy-bottomed bundles of joy</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="gyoza" value="gyoza">
-                <input type="hidden" name="gyoza-price" value="4.99">
+                <input type="hidden" name="name" value="gyoza">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -149,7 +150,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside3.jpg" alt="Sides Image 3"  />
             <div class="description">
@@ -157,8 +158,8 @@
               <p>Silky perfection in custard embrace</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="chawanmushi" value="chawanmushi">
-                <input type="hidden" name="chawanmushi-price" value="4.99">
+                <input type="hidden" name="name" value="chawanmushi">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -168,7 +169,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menuside4.jpg" alt="Sides Image 4" />
             <div class="description">
@@ -176,8 +177,8 @@
               <p>Rolling up some tasty joy</p>
               <p>$5.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="temaki" value="temaki">
-                <input type="hidden" name="temaki-price" value="5.99">
+                <input type="hidden" name="name" value="temaki">
+                <input type="hidden" name="price" value="5.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -190,7 +191,7 @@
       </div>
       <h1>Drinks</h1>
       <div class="preorderdrink">
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink1.jpg" alt="Drink Image 1" />
             <div class="description">
@@ -198,8 +199,8 @@
               <p>A whisk of delight a sip of serenity</p>
               <p>$2.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="matcha" value="matcha">
-                <input type="hidden" name="matcha-price" value="2.99">
+                <input type="hidden" name="name" value="matcha">
+                <input type="hidden" name="price" value="2.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -209,7 +210,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink2.jpg" alt="Drink Image 2" />
             <div class="description">
@@ -217,8 +218,8 @@
               <p>Really you need a description?</p>
               <p>$2.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="coke" value="coke">
-                <input type="hidden" name="coke-price" value="2.99">
+                <input type="hidden" name="name" value="coke">
+                <input type="hidden" name="price" value="2.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -228,7 +229,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink3.jpg" alt="Drink Image 3" />
             <div class="description">
@@ -236,8 +237,8 @@
               <p>A golden brew happiness in a glass</p>
               <p>$9.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="biru" value="biru">
-                <input type="hidden" name="biru-price" value="9.99">
+                <input type="hidden" name="name" value="biru">
+                <input type="hidden" name="price" value="9.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
@@ -247,7 +248,7 @@
             </div>
           </div>
         </form>
-        <form action="" method="POST">
+        <form class="addToCartForm">
           <div class="card">
             <img src="../../img/menudrink4.jpg" alt="Drink Image 4" />
             <div class="description">
@@ -255,8 +256,8 @@
               <p>Citrusy zest a burst of sunshine</p>
               <p>$4.99</p>
               <div class="add-to-cart-section">
-                <input type="hidden" name="yuzu" value="yuzu">
-                <input type="hidden" name="yuzu-price" value="4.99">
+                <input type="hidden" name="name" value="yuzu">
+                <input type="hidden" name="price" value="4.99">
                 <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                 <div class="quantity">
                   <label for="quantity" class="quantity-label">Qty:</label>
