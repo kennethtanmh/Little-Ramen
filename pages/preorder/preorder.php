@@ -35,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       }
     }
 
+    // Unset the reference after the loop, prevents duplication
+    unset($cartItem); 
+
     if (!$itemExists) {
       // Create an array to represent the item and add it to the cart 
       $cartItem = array(
@@ -48,8 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
