@@ -13,6 +13,7 @@ if (isset($_POST['email'], $_POST['password'])) {
         $row = $result->fetch_assoc(); // Fetch the user data
 
         $_SESSION['valid_user'] = $email;
+        $_SESSION['user_name'] = $row['name']; // storing the name in the session, to be used in order summary page
         echo '<!DOCTYPE html>
         <html lang="en">
           <head>
