@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  font-family: "Lato", sans-serif;
+}
+
+/* header section */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  padding: 0 15px;
+  list-style: none;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+}
+
+#navbar li a:hover {
+  color: #b71c1c;
+}
+
+/* Remember to add the class to the respective page  */
+#navbar li a.active {
+  text-decoration: underline;
+  color: #b71c1c;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 15% 2% 15%;
+}
+
+#footer img {
+  margin-top: 5%;
+  max-width: 220px;
+  height: auto;
+}
+
+#footer div.footernav1 a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000000;
+}
+
+#footer div.footernav1 a:hover {
+  color: #b71c1c;
+}
