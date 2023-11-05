@@ -21,7 +21,7 @@
           <li><a href="review.html" class="active">Review</a></li>
           <li><a href="../../php/redirect.php">Sign in</a></li>
           <li>
-            <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+            <a href="../../pages/checkout/cart.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
           </li>
         </ul>
       </div>
@@ -114,5 +114,23 @@
           <img src="../../icon/tiktok.png" alt="tiktok logo">
         </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const reviewForm = document.querySelector('#reviewform form');
+
+        reviewForm.addEventListener('submit', function(event) {
+          // Get the value of the phone input
+          const phone = document.getElementById('phone').value;
+
+          // Check if the phone number is exactly 8 digits
+          if (!/^\d{8}$/.test(phone)) {
+            // If it's not, prevent the form from submitting
+            event.preventDefault();
+            // Show an alert to the user
+            alert('Please enter a valid 8-digit Singapore phone number.');
+          }
+        });
+      });
+    </script>
     </body>
   </html>
