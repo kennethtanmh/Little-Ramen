@@ -1,57 +1,39 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
-// Check if the 'valid_user' session variable is not set
-if (!isset($_SESSION['valid_user'])) {
-    // Redirect the user to the sign-in page
-    header("Location: ../../pages/signin/signin.html");
-    exit; // Ensure that no further code is executed
+function format_price($price) {
+    if (is_numeric($price)) {
+        return number_format((float)$price, 2, '.', ',');
+    }
+    return '0.00';
 }
 
-// Check if the 'cart' session variable exists; if not, initialize it as an empty array
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
+if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+    echo "Your cart is empty! <a href='preorder.html'>Continue Shopping</a>";
+} else {
+    echo "<h1>Your Shopping Cart</h1>";
+    echo "<ul>";
+    $total = 0;
+    foreach ($_SESSION['cart'] as $productId => $product) {
+        $price = isset($product['price']) ? (float)$product['price'] : 0;
+        $quantity = isset($product['quantity']) ? (int)$product['quantity'] : 0;
+        $subtotal = $price * $quantity;
+        $total += $subtotal;
+        $productName = isset($product['name']) ? htmlspecialchars($product['name']) : 'Unknown Product';
+        echo "<li>";
+        echo "$productName - \$" . format_price($price) . " x $quantity = \$" . format_price($subtotal);
+        echo " <a href='remove_from_cart.php?product_id=$productId'>Remove</a>";
+        echo "</li>";
+    }
+    echo "</ul>";
+    echo "<p>Total: \$" . format_price($total) . "</p>";
+    echo "<form action='process_order.php' method='post'>";
+    echo "<button type='submit'>Checkout</button>";
+    echo "</form>";
+    echo "<p><a href='preorder.html'>Continue Shopping</a></p>";
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
-</head>
-<body>
-    <h1>Shopping Cart</h1>
-    <table>
-        <tr>
-            <th>Item Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-        </tr>
-        <?php
-        $totalPrice = 0;
-        foreach ($_SESSION['cart'] as $cartItem) {
-            $itemName = $cartItem['name'];
-            $itemPrice = $cartItem['price'];
-            $quantity = $cartItem['quantity'];
-            $totalItemPrice = $itemPrice * $quantity;
-            $totalPrice += $totalItemPrice;
-            echo "<tr>";
-            echo "<td>$itemName</td>";
-            echo "<td>$itemPrice</td>";
-            echo "<td>$quantity</td>";
-            echo "<td>$totalItemPrice</td>";
-            echo "</tr>";
-        }
-        ?>
-        <tr>
-            <td colspan="3">Total:</td>
-            <td><?php echo "$totalPrice"; ?></td>
-        </tr>
-    </table>
-    <a href="preorder.php">Continue Shopping</a>
-    <a href="checkout.php">Checkout</a>
-</body>
-</html>
