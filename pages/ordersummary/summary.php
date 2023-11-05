@@ -49,9 +49,9 @@ $collectionTime = $_SESSION['collectionTime'];
         <li><a href="../../pages/about/about.html">About</a></li>
         <li><a href="../../php/menuredirect.php">Menu</a></li>
         <li><a href="../../pages/review/review.html">Review</a></li>
-        <li><a href="../../php/redirect.php" class="active">Sign in</a></li>
+        <li><a href="../../php/redirect.php" >Sign in</a></li>
         <li>
-          <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+          <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon" ></i></a>
         </li>
       </ul>
     </div>

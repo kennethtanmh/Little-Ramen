@@ -65,6 +65,7 @@
             id="contactnum"
             name="contactnum"
             required
+            onchange="validateContactNumber()"
           />
           <a href="../../pages/signin/signin.html">Already have an account?</a>
           <div id="centeraccbutton">
@@ -137,6 +138,19 @@
   return true; // Returning true allows the form to be submitted
 }
 
+function validateContactNumber() {
+  const contactNum = document.getElementById("contactnum").value;
+
+  // Check if the contact number is exactly 8 digits
+  if (!/^\d{8}$/.test(contactNum)) {
+    alert('Please enter a valid 8-digit Singapore phone number.');
+    // Clear the input field if wrong
+    document.getElementById("contactnum").value = "";
+    return false; // Returning false prevents the form from being submitted
+  }
+
+  return true; // Returning true allows the form to be submitted
+}
 
 </script>
 </html>

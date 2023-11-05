@@ -14,6 +14,11 @@ if (!isset($_SESSION['cart'])) {
 }
 ?>
 
+<?php
+$isCartEmpty = empty($_SESSION['cart']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +36,7 @@ if (!isset($_SESSION['cart'])) {
           <li><a href="../../pages/about/about.html">About</a></li>
           <li><a href="../../php/menuredirect.php">Menu</a></li>
           <li><a href="../../pages/review/review.html">Review</a></li>
-          <li><a href="../../php/redirect.php" class="active">Sign in</a></li>
+          <li><a href="../../php/redirect.php">Sign in</a></li>
           <li>
             <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
           </li>
@@ -80,22 +85,24 @@ if (!isset($_SESSION['cart'])) {
           </tbody>
         </table>
 
-      <hr> 
+      <hr>
       <div class="total">
         <div>
           <div class="Subtotal">Total Price: <?php echo $totalPrice; ?> </div>
         </div>
       </div>
       <div class="cart-button">
-        <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>
-        <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
+        <?php if (!$isCartEmpty): ?>
+          <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>
+          <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
+        <?php else: ?>
+          <button class="checkout" onclick="alertEmptyCart()">Checkout</button>
+        <?php endif; ?>
       </div>
-      
+
+
       <!-- <button class="button" href="../ordersummary/summary.php">Checkout</button></div> -->
    </div>
-
-    
-    
     <footer id="footer">
         <div class="footerimg">
           <a href="../../index.html"><img src="../../img/logo.png" alt="little ramen logo"></a>
@@ -125,5 +132,10 @@ if (!isset($_SESSION['cart'])) {
           <img src="../../icon/tiktok.png" alt="tiktok logo">
         </div>
     </footer>
+    <script>
+        function alertEmptyCart() {
+          alert("Your cart is empty! Please order items at menu page before checkout.");
+        }
+    </script>
 </body>
 </html>
