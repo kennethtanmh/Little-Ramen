@@ -17,7 +17,7 @@ if (!isset($_SESSION['orderNumber']) && (!empty($_SESSION['cart'])) ) {
 $orderNumber = $_SESSION['orderNumber'];
 
 // check if collectionTime has already been assigned
-if (!isset($_SESSION['collectionTime']) && (!empty($_SESSION['cart'])) ) {
+if (!isset($_SESSION['collectionTime']) && (!empty($_SESSION['cart']))) {
   // Get Estimated Time Logic
   date_default_timezone_set('Asia/Singapore');
   $currentTimestamp = time();
