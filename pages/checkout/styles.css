@@ -127,6 +127,7 @@ td {
   padding: 12px;
   text-align: center;
   font-weight: bold;
+  font-size: 18px;
 }
 
 th {
@@ -152,16 +153,20 @@ hr {
   color: #202020;
 }
 
-.button {
-  width: 150px;
-  height: 30px;
+.checkout {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
   border: none;
-  background: linear-gradient(to bottom right, #b8d7ff, #8eb7eb);
-  border-radius: 20px;
+  background-color: #b71c1c;
+  color: white;
   cursor: pointer;
+  border-radius: 5px;
   font-size: 16px;
-  font-family: "Open Sans";
-  font-weight: 600;
-  color: #202020;
-  margin: 20px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.checkout:hover {
+  background-color: #9f1717;
 }

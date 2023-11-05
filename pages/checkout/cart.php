@@ -41,7 +41,7 @@ if (!isset($_SESSION['cart'])) {
 
     <div class="Cart-Container">
    	   <div class="Header">
-   	   	<h3 class="Heading">Shopping Cart</h3>
+   	   	<h3 class="Heading">Your Cart Contents</h3>
    	   </div>
 
         <table>
@@ -86,7 +86,8 @@ if (!isset($_SESSION['cart'])) {
           <div class="Subtotal">Total Price: <?php echo $totalPrice; ?> </div>
         </div>
       </div>
-      <button class="button" href="../ordersummary/summary.php">Checkout</button></div>
+      <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
+      <!-- <button class="button" href="../ordersummary/summary.php">Checkout</button></div> -->
    </div>
 
     
