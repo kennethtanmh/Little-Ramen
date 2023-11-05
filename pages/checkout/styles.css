@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background: #000000;
   font-family: "Lato", sans-serif;
 }
 
@@ -69,4 +69,99 @@ body {
 
 #footer div.footernav1 a:hover {
   color: #b71c1c;
+}
+
+/* Cart UI */
+.Cart-Container {
+  width: 70%;
+  height: 80%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 25px 40px #1687d933;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center the content horizontally */
+  justify-content: space-between; /* Distribute space between header and footer */
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.Header {
+  margin: auto;
+  width: 90%;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Heading {
+  font-size: 30px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #2f3841;
+}
+
+.image-box {
+  background-color: white; /* Add a background color */
+}
+
+.image-box img {
+  width: 120px; /* Set a fixed width, adjust as needed */
+  height: 120px; /* Set a fixed height, adjust as needed */
+  object-fit: cover;
+}
+
+/* Table styles */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Open Sans";
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Bottom Checkout price and btn */
+hr {
+  width: 50%;
+  margin: 20px;
+}
+
+.total {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.Subtotal {
+  font-size: 30px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #202020;
+}
+
+.button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  background: linear-gradient(to bottom right, #b8d7ff, #8eb7eb);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  color: #202020;
+  margin: 20px;
 }

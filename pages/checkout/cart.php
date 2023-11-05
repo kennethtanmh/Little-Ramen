@@ -39,39 +39,57 @@ if (!isset($_SESSION['cart'])) {
       </div>
     </nav>
 
-    <div>
-        <h1>Shopping Cart</h1>
+    <div class="Cart-Container">
+   	   <div class="Header">
+   	   	<h3 class="Heading">Shopping Cart</h3>
+   	   </div>
+
         <table>
-            <tr>
-                <th>Item Name</th>
-                <th>Price</th>
+          <thead>
+              <tr>
+                <th></th>
+                <th>Item</th>
                 <th>Quantity</th>
-                <th>Total</th>
-            </tr>
-            <?php
-            $totalPrice = 0;
-            foreach ($_SESSION['cart'] as $cartItem) {
-                $itemName = $cartItem['name'];
-                $itemPrice = $cartItem['price'];
-                $quantity = $cartItem['quantity'];
-                $totalItemPrice = $itemPrice * $quantity;
-                $totalPrice += $totalItemPrice;
-                echo "<tr>";
-                echo "<td>$itemName</td>";
-                echo "<td>$itemPrice</td>";
-                echo "<td>$quantity</td>";
-                echo "<td>$totalItemPrice</td>";
-                echo "</tr>";
-            }
-            ?>
-            <tr>
-                <td colspan="3">Total:</td>
-                <td><?php echo "$totalPrice"; ?></td>
-            </tr>
+                <th>Price</th>
+                <th>Sub-total</th>
+              </tr>
+          </thead>
+          <tbody>
+              <?php
+              $totalPrice = 0;
+              foreach ($_SESSION['cart'] as $cartItem) {
+                  $itemName = $cartItem['name'];
+                  $itemPrice = $cartItem['price'];
+                  $quantity = $cartItem['quantity'];
+                  $totalItemPrice = $itemPrice * $quantity;
+                  $totalPrice += $totalItemPrice;
+
+                  echo '<tr>';
+                  echo '  <td>';
+                  echo '     <div class="image-box">';
+                  echo '        <img src="img/' . $itemName . '.jpg" />';
+                  echo '      </div>';
+                  echo ' </td> ';
+                  echo '  <td>'  . $itemName . '</td>';
+                  echo '  <td>'  . $quantity . '</td>';
+                  echo '  <td>$' . $itemPrice . '</td>';
+                  echo '  <td>$' . $totalItemPrice . '</td>';
+                  echo '</tr>';
+              }
+              ?>
+          </tbody>
         </table>
-        <a href="../preorder/preorder.php">Continue Shopping</a>
-        <a href="../ordersummary/summary.php">Pay</a>
-    </div>
+
+      <hr> 
+      <div class="total">
+        <div>
+          <div class="Subtotal">Total Price: <?php echo $totalPrice; ?> </div>
+        </div>
+      </div>
+      <button class="button" href="../ordersummary/summary.php">Checkout</button></div>
+   </div>
+
+    
     
     <footer id="footer">
         <div class="footerimg">
