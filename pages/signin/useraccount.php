@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
             <li><a href="../../pages/review/review.html">Review</a></li>
             <li><a href="../../php/redirect.php" class="active">Sign in</a></li>
             <li>
-            <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+            <a href="../../php/cartredirect.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
             </li>
         </ul>
         </div>

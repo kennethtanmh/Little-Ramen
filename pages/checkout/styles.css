@@ -153,9 +153,14 @@ hr {
   color: #202020;
 }
 
-.checkout {
+.cart-button {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+}
+
+.checkout {
+  margin: 0 10px 0 10px;
   padding: 10px 20px;
   border: none;
   background-color: #b71c1c;
