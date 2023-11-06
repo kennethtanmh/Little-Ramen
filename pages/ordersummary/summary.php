@@ -28,6 +28,8 @@ if (!isset($_SESSION['collectionTime']) && (!empty($_SESSION['cart']))) {
 
 $collectionTime = $_SESSION['collectionTime'];
 
+$_SESSION['isCheckoutClicked'] = True;
+
 ?>
 
 

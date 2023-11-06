@@ -9,13 +9,14 @@ if (!isset($_SESSION['valid_user'])) {
 }
 
 // User is logged in at this point, now check the cart contents
-if ((empty($_SESSION['cart'])) && !($_SESSION['isCheckoutClicked'] == false)) {
-    // If the cart is empty and user has not clicked checkout redirect to the cart page
+if (empty($_SESSION['cart'])) {
     header("Location: ../pages/checkout/cart.php");
-} else {
-    // If the cart is not empty, redirect to the summary page
+} else if (!empty($_SESSION['cart']) && $_SESSION['isCheckoutClicked']) {
     header("Location: ../pages/ordersummary/summary.php");
+} else {
+    header("Location: ../pages/checkout/cart.php");
 }
 exit;
+
 ?>
 

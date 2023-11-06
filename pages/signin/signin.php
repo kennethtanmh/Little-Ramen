@@ -14,8 +14,6 @@ if (isset($_POST['email'], $_POST['password'])) {
 
         // Instantiate a Session variable to check if user has clicked checked out in the cart menu
         $_SESSION['isCheckoutClicked'] = false;
-
-
         $_SESSION['valid_user'] = $email;
         $_SESSION['user_name'] = $row['name']; // storing the name in the session, to be used in order summary page
         echo '<!DOCTYPE html>
