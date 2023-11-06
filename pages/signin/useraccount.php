@@ -64,7 +64,9 @@ if ($result->num_rows > 0) {
             <div class="promo-section">
                 <div class="promo-card">
                     <h3>Free Matcha: matcha23 </h3>
-                    <a href="../../pages/preorder/preorder.html"><button class="promo-button">Use</button></a>
+                    <form action="../../php/addMatcha.php" method="post">
+                        <a href="../../php/addMatcha.php"><button class="promo-button">Use</button></a>
+                    </form>    
                 </div>
             </div>
         </div>
