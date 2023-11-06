@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <li><a href="../../pages/review/review.html">Review</a></li>
           <li><a href="../../php/redirect.php">Sign in</a></li>
           <li>
-            <a href="../../pages/checkout/cart.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+            <a href="../../php/cartredirect.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
           </li>
         </ul>
       </div>
