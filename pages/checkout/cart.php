@@ -57,12 +57,13 @@ $isCartEmpty = empty($_SESSION['cart']);
                 <th>Quantity</th>
                 <th>Price</th>
                 <th>Sub-total</th>
+                <th></th>
               </tr>
           </thead>
           <tbody>
               <?php
               $totalPrice = 0;
-              foreach ($_SESSION['cart'] as $cartItem) {
+              foreach ($_SESSION['cart'] as $index => $cartItem) {
                   $itemName = $cartItem['name'];
                   $itemPrice = $cartItem['price'];
                   $quantity = $cartItem['quantity'];
@@ -79,6 +80,12 @@ $isCartEmpty = empty($_SESSION['cart']);
                   echo '  <td>'  . $quantity . '</td>';
                   echo '  <td>$' . $itemPrice . '</td>';
                   echo '  <td>$' . $totalItemPrice . '</td>';
+                  echo '  <td>';
+                  echo '    <form method="post" action="../../php/deleteItemsFromCart.php">';
+                  echo '      <input type="hidden" name="item_index" value="' . $index . '">';
+                  echo '      <input class="deleteBtn" type="submit" value="Remove from Cart">';
+                  echo '    </form>';
+                  echo '  </td>';
                   echo '</tr>';
               }
               ?>
@@ -93,7 +100,7 @@ $isCartEmpty = empty($_SESSION['cart']);
       </div>
       <div class="cart-button">
         <?php if (!$isCartEmpty): ?>
-          <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>
+          <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>  
           <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
         <?php else: ?>
           <button class="checkout" onclick="alertEmptyCart()">Checkout</button>
@@ -101,7 +108,6 @@ $isCartEmpty = empty($_SESSION['cart']);
       </div>
 
 
-      <!-- <button class="button" href="../ordersummary/summary.php">Checkout</button></div> -->
    </div>
     <footer id="footer">
         <div class="footerimg">
