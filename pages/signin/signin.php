@@ -6,7 +6,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $query = "SELECT email, password, name, phone_number FROM users WHERE email='$email' AND password='$password'";
+    $query = "SELECT user_id, email, password, name, phone_number FROM users WHERE email='$email' AND password='$password'";
     $result = $dbcnx->query($query);
 
     if ($result->num_rows > 0) {
@@ -16,6 +16,7 @@ if (isset($_POST['email'], $_POST['password'])) {
         $_SESSION['isCheckoutClicked'] = false;
         $_SESSION['valid_user'] = $email;
         $_SESSION['user_name'] = $row['name']; // storing the name in the session, to be used in order summary page
+
         echo '<!DOCTYPE html>
         <html lang="en">
           <head>

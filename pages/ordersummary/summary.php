@@ -1,4 +1,5 @@
 <?php
+include "../../php/dbconnect.php";
 session_start();
 
 // Check if the 'valid_user' session variable is not set
@@ -30,6 +31,22 @@ $collectionTime = $_SESSION['collectionTime'];
 
 $_SESSION['isCheckoutClicked'] = True;
 
+$email = $_SESSION['valid_user'];
+
+// db code to push to orders table
+// Loop through the $_SESSION['cart'] array and insert items into the database
+foreach ($_SESSION['cart'] as $index => $cartItem) {
+  $itemName = $cartItem['name'];
+  $quantity = $cartItem['quantity'];
+  
+  // Prepare and execute an SQL query to insert each item into the database
+  $sql = "INSERT INTO orders (email, item, quantity, orderNum) 
+          VALUES ('$email', '$itemName', '$quantity', '$orderNumber')";
+  
+  $result = $dbcnx->query($sql);
+
+  $dbcnx->close();
+};
 ?>
 
 

@@ -18,6 +18,6 @@ if (isset($_POST['received']) && $_POST['received'] == true) {
 }
 
 // Redirect back to the order summary page
-header('Location: ../../pages/ordersummary/summary.php');
+header('Location: ../../index.html');
 exit;
 ?>

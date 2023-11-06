@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS users;
-
 CREATE TABLE IF NOT EXISTS users (
   user_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -16,3 +14,16 @@ CREATE TABLE IF NOT EXISTS reviews (
   phone_number VARCHAR(20),
   review VARCHAR(1000) NOT NULL
 );
+
+-- Table for orders
+CREATE TABLE IF NOT EXISTS orders (
+  order_id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  FOREIGN KEY (email) REFERENCES users(email),
+  item VARCHAR(255) NOT NULL,
+  quantity INT NOT NULL,
+  orderNum VARCHAR(255) NOT NULL,
+);
+
+
+
