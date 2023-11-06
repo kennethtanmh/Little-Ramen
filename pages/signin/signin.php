@@ -12,6 +12,10 @@ if (isset($_POST['email'], $_POST['password'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc(); // Fetch the user data
 
+        // Instantiate a Session variable to check if user has clicked checked out in the cart menu
+        $_SESSION['isCheckoutClicked'] = false;
+
+
         $_SESSION['valid_user'] = $email;
         $_SESSION['user_name'] = $row['name']; // storing the name in the session, to be used in order summary page
         echo '<!DOCTYPE html>

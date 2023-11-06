@@ -13,6 +13,8 @@ if (isset($_POST['received']) && $_POST['received'] == true) {
   unset($_SESSION['orderNumber']);
   unset($_SESSION['collectionTime']);
   unset($_SESSION['cart']);
+  $_SESSION['isCheckoutClicked'] = false; // user has clicked order Received therefore we reset the tracker for checkout.
+ 
 }
 
 // Redirect back to the order summary page
