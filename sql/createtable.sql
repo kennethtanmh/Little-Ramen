@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS users (
   phone_number VARCHAR(20)
 );
 
-
 CREATE TABLE IF NOT EXISTS reviews (
   review_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -22,7 +21,7 @@ CREATE TABLE IF NOT EXISTS orders (
   FOREIGN KEY (email) REFERENCES users(email),
   item VARCHAR(255) NOT NULL,
   quantity INT NOT NULL,
-  orderNum VARCHAR(255) NOT NULL,
+  orderNum VARCHAR(255) NOT NULL
 );
 
 

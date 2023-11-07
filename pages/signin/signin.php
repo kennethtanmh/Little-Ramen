@@ -36,11 +36,11 @@ if (isset($_POST['email'], $_POST['password'])) {
                 <ul id="navbar">
                   <li><a href="../../index.html">Home</a></li>
                   <li><a href="../../pages/about/about.html">About</a></li>
-                  <li><a href="../../pages/preorder/preorder.html">Menu</a></li>
+                  <li><a href="../../php/menuredirect.php">Menu</a></li>
                   <li><a href="../../pages/review/review.html">Review</a></li>
                   <li><a href="signin.html" class="active">Sign in</a></li>
                   <li>
-                    <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+                  <a href="signin.html"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
                   </li>
                 </ul>
               </div>

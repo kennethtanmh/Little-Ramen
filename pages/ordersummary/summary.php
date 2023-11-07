@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include "../../php/dbconnect.php";
 session_start();
 
@@ -9,46 +12,56 @@ if (!isset($_SESSION['valid_user'])) {
     exit; // Ensure that no further code is executed
 }
 
-// check if orderNumber has already been assigned
-if (!isset($_SESSION['orderNumber']) && (!empty($_SESSION['cart'])) ) {
-  // Order Number Logic, unqiue 3-digit order number
+// Check if orderNumber has already been assigned
+if (!isset($_SESSION['orderNumber']) && (!empty($_SESSION['cart']))) {
+  // Order Number Logic, unique 3-digit order number
   $_SESSION['orderNumber'] = rand(100, 999);
 }
 
 $orderNumber = $_SESSION['orderNumber'];
 
-// check if collectionTime has already been assigned
+// Check if collectionTime has already been assigned
 if (!isset($_SESSION['collectionTime']) && (!empty($_SESSION['cart']))) {
   // Get Estimated Time Logic
   date_default_timezone_set('Asia/Singapore');
   $currentTimestamp = time();
   $randomMinutes = rand(20,50);
-  $collectionTimestamp =$currentTimestamp + ($randomMinutes * 60);
+  $collectionTimestamp = $currentTimestamp + ($randomMinutes * 60);
   $_SESSION['collectionTime'] = date("h:i A", $collectionTimestamp);
 }
 
 $collectionTime = $_SESSION['collectionTime'];
 
-$_SESSION['isCheckoutClicked'] = True;
+$_SESSION['isCheckoutClicked'] = true;
 
 $email = $_SESSION['valid_user'];
 
 // db code to push to orders table
-// Loop through the $_SESSION['cart'] array and insert items into the database
-foreach ($_SESSION['cart'] as $index => $cartItem) {
-  $itemName = $cartItem['name'];
-  $quantity = $cartItem['quantity'];
-  
-  // Prepare and execute an SQL query to insert each item into the database
-  $sql = "INSERT INTO orders (email, item, quantity, orderNum) 
-          VALUES ('$email', '$itemName', '$quantity', '$orderNumber')";
-  
-  $result = $dbcnx->query($sql);
+// Check if the order has not been added to the database yet
+if (!isset($_SESSION['orderAdded'])) {
+  // Loop through the $_SESSION['cart'] array and insert items into the database
+  foreach ($_SESSION['cart'] as $index => $cartItem) {
+    $itemName = $cartItem['name'];
+    $quantity = $cartItem['quantity'];
 
+    // Create SQL query
+    $sql = "INSERT INTO orders (email, item, quantity, orderNum) 
+            VALUES ('$email', '$itemName', '$quantity', '$orderNumber')";
+
+    // Execute SQL query
+    if (!$dbcnx->query($sql)) {
+      // Handle error - this will halt the loop and script
+      die("Database query failed: " . $dbcnx->error);
+    }
+  }
+
+  // After successfully inserting all items in the cart
+  $_SESSION['orderAdded'] = true;
+
+  // Close the database connection
   $dbcnx->close();
 };
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +95,7 @@ foreach ($_SESSION['cart'] as $index => $cartItem) {
           <p>Your order is being processed.</p>
           <p>Order Summary:</p>
       </div>
-      <div class="orderSummary">    
+      <div class="orderSummary">
           <table>
               <?php
                   foreach ($_SESSION['cart'] as $cartItem) {
@@ -108,9 +121,6 @@ foreach ($_SESSION['cart'] as $index => $cartItem) {
         </form>
       </div>
     </div>
-
-    
-  
 
     <footer id="footer">
         <div class="footerimg">
