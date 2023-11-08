@@ -122,3 +122,7 @@ body {
 .orderReceivedBtn button:hover {
   background-color: #9f1717;
 }
+
+.summarybody {
+  margin: 8% 0 8% 0;
+}

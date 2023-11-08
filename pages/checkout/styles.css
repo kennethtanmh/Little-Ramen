@@ -188,3 +188,7 @@ hr {
   transition: background-color 0.3s ease;
   text-decoration: none;
 }
+
+.cartbody {
+  margin: 12% 0 12% 0;
+}

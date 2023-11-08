@@ -44,68 +44,73 @@ $isCartEmpty = empty($_SESSION['cart']);
       </div>
     </nav>
 
-    <div class="Cart-Container">
-   	   <div class="Header">
-   	   	<h3 class="Heading">Your Cart Contents</h3>
-   	   </div>
-
-        <table>
-          <thead>
-              <tr>
-                <th></th>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Sub-total</th>
-                <th></th>
-              </tr>
-          </thead>
-          <tbody>
-              <?php
-              $totalPrice = 0;
-              foreach ($_SESSION['cart'] as $index => $cartItem) {
-                  $itemName = $cartItem['name'];
-                  $itemPrice = $cartItem['price'];
-                  $quantity = $cartItem['quantity'];
-                  $totalItemPrice = $itemPrice * $quantity;
-                  $totalPrice += $totalItemPrice;
-
-                  echo '<tr>';
-                  echo '  <td>';
-                  echo '     <div class="image-box">';
-                  echo '        <img src="img/' . $itemName . '.jpg" />';
-                  echo '      </div>';
-                  echo ' </td> ';
-                  echo '  <td>'  . $itemName . '</td>';
-                  echo '  <td>'  . $quantity . '</td>';
-                  echo '  <td>$' . $itemPrice . '</td>';
-                  echo '  <td>$' . $totalItemPrice . '</td>';
-                  echo '  <td>';
-                  echo '    <form method="post" action="../../php/deleteItemsFromCart.php">';
-                  echo '      <input type="hidden" name="item_index" value="' . $index . '">';
-                  echo '      <input class="deleteBtn" type="submit" value="Remove from Cart">';
-                  echo '    </form>';
-                  echo '  </td>';
-                  echo '</tr>';
-              }
-              ?>
-          </tbody>
-        </table>
-
-      <hr>
-      <div class="total">
-        <div>
-          <div class="Subtotal">Total Price: <?php echo $totalPrice; ?> </div>
+    <div class="cartbody">
+      <div class="Cart-Container">
+        <div class="Header">
+          <h3 class="Heading">Your Cart Contents</h3>
         </div>
-      </div>
-      <div class="cart-button">
-        <?php if (!$isCartEmpty): ?>
-          <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>  
-          <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
-        <?php else: ?>
-          <button class="checkout" onclick="alertEmptyCart()">Checkout</button>
-        <?php endif; ?>
-      </div>
+
+          <table>
+            <thead>
+                <tr>
+                  <th></th>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Sub-total</th>
+                  <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $totalPrice = 0;
+                foreach ($_SESSION['cart'] as $index => $cartItem) {
+                    $itemName = $cartItem['name'];
+                    $itemPrice = $cartItem['price'];
+                    $quantity = $cartItem['quantity'];
+                    $totalItemPrice = $itemPrice * $quantity;
+                    $totalPrice += $totalItemPrice;
+
+                    echo '<tr>';
+                    echo '  <td>';
+                    echo '     <div class="image-box">';
+                    echo '        <img src="img/' . $itemName . '.jpg" />';
+                    echo '      </div>';
+                    echo ' </td> ';
+                    echo '  <td>'  . $itemName . '</td>';
+                    echo '  <td>'  . $quantity . '</td>';
+                    echo '  <td>$' . $itemPrice . '</td>';
+                    echo '  <td>$' . $totalItemPrice . '</td>';
+                    echo '  <td>';
+                    echo '    <form method="post" action="../../php/deleteItemsFromCart.php">';
+                    echo '      <input type="hidden" name="item_index" value="' . $index . '">';
+                    echo '      <input class="deleteBtn" type="submit" value="Remove from Cart">';
+                    echo '    </form>';
+                    echo '  </td>';
+                    echo '</tr>';
+                }
+                ?>
+            </tbody>
+          </table>
+
+        <hr>
+        <div class="total">
+          <div>
+            <div class="Subtotal">Total Price: <?php echo $totalPrice; ?> </div>
+          </div>
+        </div>
+        <div class="cart-button">
+          <?php if (!$isCartEmpty): ?>
+            <a class="checkout" href="../../pages/preorder/preorder.html">Continue</a>  
+            <a class="checkout" href="../ordersummary/summary.php">Checkout</a>
+          <?php else: ?>
+            <button class="checkout" onclick="alertEmptyCart()">Checkout</button>
+          <?php endif; ?>
+        </div>
+
+
+
+    </div>
 
 
    </div>

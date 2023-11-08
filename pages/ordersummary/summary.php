@@ -89,38 +89,40 @@ if (!isset($_SESSION['orderAdded'])) {
     </div>
   </nav>
 
+  <div class="summarybody">
     <div class="content-box">
-      <div class="welcomeMessage">
-          <p>Welcome <?php echo $_SESSION['user_name']; ?> !</p>
-          <p>Your order is being processed.</p>
-          <p>Order Summary:</p>
+        <div class="welcomeMessage">
+            <p>Welcome <?php echo $_SESSION['user_name']; ?> !</p>
+            <p>Your order is being processed.</p>
+            <p>Order Summary:</p>
+        </div>
+        <div class="orderSummary">
+            <table>
+                <?php
+                    foreach ($_SESSION['cart'] as $cartItem) {
+                        $itemName = $cartItem['name'];
+                        $quantity = $cartItem['quantity'];
+                        echo "<tr>";
+                        echo "<td>$itemName </td>";
+                        echo "<td>X $quantity</td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </table>
+        </div>
+        <div class="orderInfo">
+          <p>Your Order Number is: </p>
+          <p><?php echo $orderNumber; ?></p>
+          <p>Estimated Collection Time</p>
+          <p><?php echo $collectionTime; ?></p>
+        </div>
+        <div class="orderReceivedBtn">
+          <form action="./orderReceived.php" method="post">
+          <button type="submit" name="received" value="true">Order Received!</button>
+          </form>
+        </div>
       </div>
-      <div class="orderSummary">
-          <table>
-              <?php
-                  foreach ($_SESSION['cart'] as $cartItem) {
-                      $itemName = $cartItem['name'];
-                      $quantity = $cartItem['quantity'];
-                      echo "<tr>";
-                      echo "<td>$itemName </td>";
-                      echo "<td>X $quantity</td>";
-                      echo "</tr>";
-                  }
-              ?>
-          </table>
-      </div>
-      <div class="orderInfo">
-        <p>Your Order Number is: </p>
-        <p><?php echo $orderNumber; ?></p>
-        <p>Estimated Collection Time</p>
-        <p><?php echo $collectionTime; ?></p>
-      </div>
-      <div class="orderReceivedBtn">
-        <form action="./orderReceived.php" method="post">
-        <button type="submit" name="received" value="true">Order Received!</button>
-        </form>
-      </div>
-    </div>
+  </div>
 
     <footer id="footer">
         <div class="footerimg">
