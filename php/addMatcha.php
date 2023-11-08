@@ -6,11 +6,11 @@ $userClaimedFreeMatcha = isset($_SESSION['userClaimedFreeMatcha']) ? $_SESSION['
 
 if (!$userClaimedFreeMatcha) {
     $cartItem = array(
-        'name' => 'Free Matcha',
+        'name' => 'free matcha',
         'price' => 0,
         'quantity' => 1
     );
-    
+
     // Add the item to the cart array
     $_SESSION['cart'][] = $cartItem;
     
