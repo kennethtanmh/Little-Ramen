@@ -35,6 +35,7 @@
             id="name"
             name="name"
             required
+            onchange="validateName()"
           />
           <label for="email">E-mail:</label>
           <input
@@ -104,6 +105,27 @@
     </footer>
  </body>
  <script>
+    function validateName() {
+      var name = document.getElementById("name").value;
+      name.trim();
+      if (name.length > 0) {
+        var regexp = /^[a-zA-Z][a-zA-Z ]+$/;
+        if (regexp.test(name)) {
+          return true;
+        } else {
+          alert(
+            'Name enter "' +
+              name +
+              '" has incorrect format, only alphabet characters and character spaces allowed'
+          );
+          return false;
+        }
+      }
+      alert("Please fill in your name.");
+      return false;
+
+    }
+
     function validateEmail() {
     var email = document.getElementById("email").value;
     email = email.trim();
@@ -142,7 +164,7 @@ function validateContactNumber() {
   const contactNum = document.getElementById("contactnum").value;
 
   // Check if the contact number is exactly 8 digits
-  if (!/^\d{8}$/.test(contactNum)) {
+  if (!/^[689]\d{7}$/.test(contactNum)) {
     alert('Please enter a valid 8-digit Singapore phone number.');
     // Clear the input field if wrong
     document.getElementById("contactnum").value = "";
