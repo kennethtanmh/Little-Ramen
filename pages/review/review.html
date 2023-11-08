@@ -55,6 +55,7 @@
             name="name"
             placeholder="John Doe"
             required
+            onchange="validateName()"
           />
           <label for="email">E-mail:</label>
           <input
@@ -63,6 +64,7 @@
             name="email"
             placeholder="John@littleramen.com"
             required
+            onchange="validateEmail()"
           />
           <label for="phone">Phone Number:</label>
           <input
@@ -71,6 +73,7 @@
             name="phone"
             placeholder="91234567"
             required
+            onchange="validateContactNumber()"
           />
           <label for="review">Review:</label>
           <textarea
@@ -115,22 +118,60 @@
         </div>
     </footer>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const reviewForm = document.querySelector('#reviewform form');
+      function validateName() {
+      var name = document.getElementById("name").value;
+      name.trim();
+      if (name.length > 0) {
+        var regexp = /^[a-zA-Z][a-zA-Z ]+$/;
+        if (regexp.test(name)) {
+          return true;
+        } else {
+          alert(
+            'Name enter "' +
+              name +
+              '" has incorrect format, only alphabet characters and character spaces allowed'
+          );
+          document.getElementById("name").value = "";
+          return false;
+        }
+      }
+      alert("Please fill in your name.");
+      return false;
 
-        reviewForm.addEventListener('submit', function(event) {
-          // Get the value of the phone input
-          const phone = document.getElementById('phone').value;
+    }
 
-          // Check if the phone number is exactly 8 digits
-          if (!/^\d{8}$/.test(phone)) {
-            // If it's not, prevent the form from submitting
-            event.preventDefault();
-            // Show an alert to the user
-            alert('Please enter a valid 8-digit Singapore phone number.');
-          }
-        });
-      });
+    function validateEmail() {
+      var email = document.getElementById("email").value;
+      email = email.trim();
+      if (email.length > 0) {
+        var regexp = /^[\w-\.]+@([\w]+\.)([\w]+\.)?([\w]+\.)?[\w]{2,3}$/;
+        if (regexp.test(email)) {
+          return true;
+        } else {
+          alert('Email entered "' + email + '" has incorrect format');
+        }
+      } else {
+        alert("Please fill in your email.");
+      }
+
+      // Clear the input field if wrong
+      document.getElementById("email").value = "";
+      return false;
+    }
+
+    function validateContactNumber() {
+      const contactNum = document.getElementById("phone").value;
+
+      // Check if the contact number is exactly 8 digits
+      if (!/^[689]\d{7}$/.test(contactNum)) {
+        alert('Please enter a valid 8-digit Singapore phone number.');
+        // Clear the input field if wrong
+        document.getElementById("phone").value = "";
+        return false; // Returning false prevents the form from being submitted
+      }
+
+      return true; // Returning true allows the form to be submitted
+    }
     </script>
     </body>
   </html>
