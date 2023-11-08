@@ -63,7 +63,7 @@ if ($result->num_rows > 0) {
             </div>
             <div class="promo-section">
                 <div class="promo-card">
-                    <h3>Free Matcha:</h3>
+                    <h3>Free Matcha </h3>
                     <form action="../../php/addMatcha.php" method="post">
                         <a href="../../php/addMatcha.php"><button class="promo-button">Use</button></a>
                     </form>

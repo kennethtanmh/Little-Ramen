@@ -60,7 +60,7 @@ if (isset($_POST['email'], $_POST['password'])) {
                     </div>
                     <div class="promo-section">
                         <div class="promo-card">
-                            <h3>Free Matcha: matcha23 </h3>
+                            <h3>Free Matcha </h3>
                             <a href="../../pages/preorder/preorder.html"><button class="promo-button">Use</button></a>
                         </div>
                     </div>
