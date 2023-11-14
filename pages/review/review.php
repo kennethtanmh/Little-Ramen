@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <li><a href="review.html" class="active">Review</a></li>
               <li><a href="../../pages/preorder/preorder.html">Sign in</a></li>
               <li>
-                <a href=""><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
+              <a href="../../php/cartredirect.php"><img src="../../icon/shopping-cart.png" alt="cart icon"></i></a>
               </li>
             </ul>
           </div>
