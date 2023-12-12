@@ -1,8 +1,8 @@
 # Little-Ramen
 
-Full Stack Application for Nanyang Technological University Module 
+Full Stack Application for Nanyang Technological University Module Web Application Design (IE4717)
 
-Web Application Design (IE4717)
+
 ![image](https://github.com/kennethtanmh/Little-Ramen/assets/109200284/7276bfd7-9fdd-45e1-998f-563c61226c6b)
 ![image](https://github.com/kennethtanmh/Little-Ramen/assets/109200284/6c41074e-b37a-4299-92a7-782a2f7850cc)
 ![image](https://github.com/kennethtanmh/Little-Ramen/assets/109200284/3180bfb6-95f5-41a0-9644-de59e8352092)
